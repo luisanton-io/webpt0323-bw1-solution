@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'outfit';
+    src: url(/assets/outfit.woff2);
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+    background-image: url(/assets/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'outfit';
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#welcome-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 60vw;
+    margin-inline: auto;
+}
+
+#welcome-content h1 {
+    font-size: 5em;
+}
+
+#welcome-content h2 {
+    color: #d20094;
+}
+
+#welcome-content div:last-child {
+    margin-top: 2em;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+}
+
+#welcome-content input + label {
+    margin-inline-start: 1ch;
+}
+
+#welcome-content #next {
+    margin-top: unset;
+    margin-inline-start: auto;
+}
+
+img.logo {
+    width: 200px;
+    position: fixed;
+    top: 3em;
+    left: 3em;
+}
+
+h1 {
+    font-family: 'outfit';
+    font-weight: 500;
+}
+
+main {
+    color: white;
+    margin: auto;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#timer {
+    position: fixed;
+    top: 3em;
+    right: 3em;
+}
+
+#timer > div {
+    position: absolute;
+    inset: 2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+#timer span {
+    font-size: 4rem;
+    line-height: 0.8em;
+}
+
+#question-container {
+    font-size: 3em;
+}
+
+#answer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2ch;
+    margin-block-start: 3em;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio] + label {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 100px;
+    flex-basis: calc(50% - 1ch);
+    background: linear-gradient(180deg,hsla(0,0%,52%,.28),transparent 11.98%),hsla(0,0%,100%,.1);
+    padding: 1em;
+}
+
+input[type=radio] + label::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    background: linear-gradient(180deg,hsla(0,0%,100%,.6) 0,hsla(0,0%,100%,0)) border-box;
+    border-radius: 100px;
+    /* Utilizziamo una maschera per applicare il background solo in una certa area */
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+input[type=radio]:checked + label {
+    background: linear-gradient(180deg,#d20094,rgba(157,29,143,.6));
+}
+
+#next {
+    outline-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: #00ffff;
+    border-radius: 0;
+    color: #0b113b;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    padding: 15px 50px;
+    margin-top: 2em;
+    align-self: flex-end;
+}
+
+#next:hover {
+    box-shadow: 0 0 30px #0ff;
+    color: #0b113b;
+}
+
+#progress-container {
+    font-size: 2em;
+}
+
+#progress-container span {
+    color: #d20094;
+}
