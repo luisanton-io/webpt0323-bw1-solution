@@ -144,7 +144,6 @@ input[type=radio]:checked + label {
     border: none;
     cursor: pointer;
     transition: box-shadow 0.3s ease-in-out;
-    background-color: #00ffff;
     border-radius: 0;
     color: #0b113b;
     font-size: 22px;
@@ -155,7 +154,11 @@ input[type=radio]:checked + label {
     align-self: flex-end;
 }
 
-#next:hover {
+#next:not([disabled]) {
+    background-color: #00ffff;
+}
+
+#next:not([disabled]):hover {
     box-shadow: 0 0 30px #0ff;
     color: #0b113b;
 }

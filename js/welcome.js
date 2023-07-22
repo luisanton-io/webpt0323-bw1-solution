@@ -1,5 +1,5 @@
 window.onload = function () {
-    const proceedBtn = document.querySelector("#proceed")
+    const proceedBtn = document.querySelector("#next")
 
     proceedBtn.disabled = true
 
